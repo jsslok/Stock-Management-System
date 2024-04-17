@@ -1,0 +1,51 @@
+
+public class WashingMachine extends Product{
+	
+	private String type;
+    private String color;
+    private double capacity;
+
+	public WashingMachine(int item_num, String name, int quantity, double price,
+            String type, String color, double capacity) {
+		
+		super(item_num, name, quantity, price);
+        this.type = type;
+        this.color = color;
+        this.capacity = capacity;
+	}
+	
+	public String getType() {
+        return type;
+    }
+	
+	public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    public double getStockValue() {
+        return getPrice() * getQuantity();
+    }
+    
+    public void ProductDetails(){
+    	System.out.println ("Item Number: " + this.getItemNum() + "\nProduct Name: " + this.getName() +
+    			"Type: " + this.getType() + "Color: " + this.getColor() + "Capacity (kg): " + this.getCapacity() +
+    			"\nQuantity Available: " + this.getQuantity() + "\nPrice (RM): " + this.getPrice() + "\nInventory Value (RM): " 
+				+ this.getInventoryValue() + "\nProduct Status: " + (this.getStatus()? "active":"discontinue"));
+
+    }
+}
