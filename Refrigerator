@@ -1,0 +1,50 @@
+
+public class Refrigerator extends Product{
+	
+	private String doorDesign;
+	private String color;
+	private int capacity;
+
+	public Refrigerator(int item_num, String name, int quantity, double price, String doorDesign, String color, int capacity) {
+		super(item_num,name,quantity,price);
+		this.doorDesign = doorDesign;
+		this.color=color;
+		this.capacity=capacity;
+	}
+	
+	public String getDoorDesign() {
+        return doorDesign;
+    }
+	
+    public void setDoorDesign(String doorDesign) {
+        this.doorDesign = doorDesign;
+    }
+    
+    public String getColor() {
+        return color;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+    
+    public double getStockValue() {
+        return getPrice() * getQuantity();
+    }
+    
+    public String toString(){
+    	return ("Item Number      : " + this.getItemNum() + "\nProduct Name      : " + this.getName() +
+    			"Door design     :" + this.getDoorDesign() + "Color    :" + this.getColor() + "Capacity (in Litres):" + this.getCapacity() +
+    			"\nQuantity Available    : " + this.getQuantity() + "\nPrice (RM): " + this.getPrice() + "\nInventory Value (RM): " 
+				+ this.getInventoryValue() + "\nProduct Status: " + this.getStatus());
+
+    }
+
+}
