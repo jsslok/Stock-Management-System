@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class StockManagement {
+	
+	private static Product[] products;
+	
+	public static int getMaxProd(Scanner input) {
+		
+		int max=-1;
+		
+		while (max < 0) {
+			
+			System.out.println("Enter the maximum number of products to store: ");
+		
+			max = input.nextInt();
+			
+			if (max < 0) {
+				System.out.println("Please enter a positive number or 0.");
+				
+			}
+		}
+		products = new Product[max];
+		return max;
+	}
+	
+	public static int displayContent(Product[]products, Scanner input){
+		
+		System.out.println("Products: ");
+		
+		for(int i = 0;i <products.length;i++) {
+			if (products[i] != null) {
+				System.out.println(i + ". " + products[i].getName());
+			}
+		}
+		
+		int index = -1;
+		
+		while (index < 0 || index >= products.length || products[index] == null){
+			
+			System.out.println("Please select a product to update (enter index value):");
+			
+			index = input.nextInt();
+			
+			if (index < 0 || index >= products.length || products[index] == null) {
+				System.out.println("Invalid index value. Please select a valid product.");
+			}
+			
+		}
+		return index;
+	}
+	
+	public static int displayMenu(Scanner input)
+	{
+		int choice;
+		
+		System.out.println("Menu:");
+		System.out.println("1. View products");
+		System.out.println("2. Add stock");
+		System.out.println("3. Deduct stock");
+		System.out.println("4. Discontinue product");
+		System.out.println("0. Exit");
+		System.out.print("Please enter a menu option: ");
+		
+		while(!input.hasNextInt()) {
+			System.out.println("Invalid choice, please enter a valid integer.");
+			input.next();
+		}
+		
+		choice = input.nextInt();
+		
+		while( choice < 0 || choice > 4) {
+			System.out.println("Invalid choice, please enter a valid menu option.");
+			
+			while (!input.hasNextInt()) {
+	            System.out.println("Invalid input. Please enter a valid integer.");
+	            input.next();
+			}
+			choice = input.nextInt();
+		}
+		return choice;
+	}
+		
+}
