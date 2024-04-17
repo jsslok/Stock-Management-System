@@ -115,12 +115,12 @@ public class StockManagement {
 	            System.out.println("4. Washing Machine");
 	            System.out.print("Please enter your choice: ");
 	            while (!input.hasNextInt()) {
-	                System.out.print("Please enter a valid number: ");
+	                System.out.print("\nPlease enter a valid number: ");
 	                input.next();
 	            }
 	            choice = input.nextInt();
 	            if (choice < 1 || choice > 4)
-	                System.out.println("Only numbers 1, 2, 3, or 4 are allowed!\n");
+	                System.out.println("\nOnly numbers 1, 2, 3, or 4 are allowed!\n");
 	        } while (choice < 1 || choice > 4);
 	        
 	        System.out.println();
