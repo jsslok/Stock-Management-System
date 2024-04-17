@@ -149,5 +149,103 @@ public class StockManagement {
 	        System.out.println();
 	    }
 	}
+	//lw
+	public static void displayProducts(Product[] products) {
+		System.out.println("*****************************************************************");
+	    System.out.println("Content of the product");
+	    System.out.println("*****************************************************************");
+	    
+	    boolean tvExist = false;
+	    boolean refrigeratorExist = false;
+	    boolean laptopExist = false;
+	    boolean washingMachineExist = false;
+	    
+	    for (int i = 0; i < productCount; i++) {
+	    	if (products[i] instanceof TV)
+	    		tvExist = true;
+	    	if (products[i] instanceof Refrigerator)
+	    		refrigeratorExist = true;
+	    	if (products[i] instanceof Laptop)
+	    		laptopExist = true;
+	    	if (products[i] instanceof WashingMachine)
+	    		washingMachineExist = true;
+	    }
+	    if (refrigeratorExist)
+	    	System.out.println("--Refrigerator--");
+	    for (int i = 0; i < productCount; i++) {
+	    	Product product = products[i];
+	        if (product instanceof Refrigerator ) {
+	       
+	            System.out.println(product.toString());
+	        }
+	    }
+	    
+	    if (tvExist)
+	    	System.out.println("--TV--");
+	    for (int i = 0; i < productCount; i++) {
+	    	Product product = products[i];
+	        if (product instanceof TV ) {
+	       
+	            System.out.println(product.toString());
+	        }
+	    }
+	    if (laptopExist)
+	    	System.out.println("--Laptop--");
+	    for (int i = 0; i < productCount; i++) {
+	    	Product product = products[i];
+	        if (product instanceof Laptop ) {
+	       
+	            System.out.println(product.toString());
+	        }
+	    }
+	    if (washingMachineExist)
+	    	System.out.println("--Washing Machine--");
+	    for (int i = 0; i < productCount; i++) {
+	    	Product product = products[i];
+	        if (product instanceof WashingMachine ) {
+	       
+	            System.out.println(product.toString());
+	        }
+	    }
+	}
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		
+		//Display Welcome to the SMS 
+		final int MEMBERS = 4; //number of group members
+		System.out.println("*****************************************************************");
+		System.out.println("Welcome to the SMS (Store Management System)");
+		System.out.println("*****************************************************************");
+		LocalDateTime currentDateTime = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String formattedDateTime = currentDateTime.format(formatter);
+		System.out.println("Current Date and Time: " + formattedDateTime);
+		System.out.println("*****************************************************************");
+		String[] grpmember = new String[MEMBERS];
+		grpmember[0] = "Cheng Puei Ying";
+		grpmember[1] = "Chin Zi Wei";
+		grpmember[2] = "Look Zheng Hong";
+		grpmember[3] = "Tan Lok Wei";
+		System.out.println("Group Member: ");
+		System.out.println("*****************************************************************");
+		for (String member : grpmember) {
+			System.out.println("Name: " + member );
+		};
+		System.out.println("*****************************************************************");
+		UserInfo userInfo = new UserInfo();
+		max = getMaxProd(input);
+		products = new Product[max];
+		
+		addProductChoice(products, input);
+		int choice;
+		choice = displayMenu(input);
+		userChoice(choice, products, input);
+		
+		userInfo.displayLogOutInfo();
+		input.close();
+		
+		
+	}
 		
 }
