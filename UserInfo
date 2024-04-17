@@ -1,0 +1,75 @@
+import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class UserInfo
+{
+	private String name;
+	private String userID;
+	private String logInTime;
+	private String logOutTime;
+	
+	Scanner input = new Scanner (System.in);
+	
+	public UserInfo ()
+	{
+		System.out.print("Please enter your name (First Name Surname): ");
+		this.name = input.nextLine();
+		
+		if (checkSpaceInName (name))
+		{
+			String[] splitname = name.split(" ");
+			String surname = splitname[splitname.length-1];
+			this.userID = name.charAt(0) + surname;
+		}
+		else
+			this.userID = "guest";
+		
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.logInTime = currentDateTime.format(formatter);
+        
+        this.displayLogInInfo();
+	}
+	
+	public boolean checkSpaceInName (String name)
+	{
+		String[] splitname = name.split(" ");
+		if (splitname.length == 1)
+			return false;
+		return true;
+	}
+	
+	public String getUserID ()
+	{
+		return userID;
+	}
+	
+	public String getName ()
+	{
+		return name;
+	}
+	
+	public String getLogInTime ()
+	{
+		return logInTime;
+	}
+	
+	public void displayLogInInfo ()
+	{
+		System.out.println();
+		System.out.println ("******************************Welcome******************************");
+		System.out.println (name + " logged in as (" + userID + ") at " + logInTime);
+	}
+	
+	public void displayLogOutInfo ()
+	{
+		LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.logOutTime = currentDateTime.format(formatter);
+        
+		System.out.println();
+		System.out.println ("******************************Good Bye******************************");
+		System.out.println (name + " log out as (" + userID + ") at " + logOutTime);
+	}
+}
