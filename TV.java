@@ -45,7 +45,7 @@ public class TV extends Product{
     	return("Item Number       : " + this.getItemNum() + "\nProduct Name      : " + this.getName() +
     			"\nScreen type       : " + this.getScreenType() + "\nResolution        : " + this.getResolution() + "\nDisplay size      : " + this.getDisplaySize() +
     			"\nQuantity Available: " + this.getQuantity() + "\nPrice (RM)        : " + this.getPrice() + "\nInventory Value (RM): " 
-				+ this.getInventoryValue() + "\nProduct Status    : " + this.getStatus());
+				+ this.getInventoryValue() + "\nProduct Status    : " + (this.getStatus()?"active":"discontinue"));
 
     }
 }
