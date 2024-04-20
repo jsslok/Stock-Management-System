@@ -702,7 +702,7 @@ public class StockManagement {
 	    boolean laptopExist = false;
 	    boolean washingMachineExist = false;
 	    
-	    for (int i = 0; i < products.length; i++) {
+	    for (int i = 0; i < productCount; i++) {
 	    	if (products[i] instanceof TV)
 	    		tvExist = true;
 	    	if (products[i] instanceof Refrigerator)
@@ -713,49 +713,53 @@ public class StockManagement {
 	    		washingMachineExist = true;
 	    }
 	    if (refrigeratorExist)
-	    	System.out.println();
-	    	System.out.println("--Refrigerator--");
-	    for (int i = 0; i < products.length; i++) {
+	    	System.out.println("\n--Refrigerator--");
+	    for (int i = 0; i < productCount; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Refrigerator ) {
 	       
 	            System.out.println(product.toString());
 	            System.out.println();
 	        }
+	        
 	    }
 	    
+	    
 	    if (tvExist)
-	    	System.out.println();
-	    	System.out.println("--TV--");
-	    for (int i = 0; i < products.length; i++) {
+	    	System.out.println("\n--TV--");
+	    for (int i = 0; i < productCount; i++) {
 	    	Product product = products[i];
 	        if (product instanceof TV ) {
 	       
 	            System.out.println(product.toString());
 	            System.out.println();
 	        }
+	        
 	    }
+	    System.out.println();
 	    if (laptopExist)
-	    	System.out.println();
-	    	System.out.println("--Laptop--");
-	    for (int i = 0; i < products.length; i++) {
+	    	System.out.println("\n--Laptop--");
+	    for (int i = 0; i < productCount; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Laptop ) {
 	       
 	            System.out.println(product.toString());
 	            System.out.println();
 	        }
+	        
 	    }
+	    
+	    
 	    if (washingMachineExist)
-	    	System.out.println();
-	    	System.out.println("--Washing Machine--");
-	    for (int i = 0; i < products.length; i++) {
+	    	System.out.println("\n--Washing Machine--");
+	    for (int i = 0; i < productCount; i++) {
 	    	Product product = products[i];
 	        if (product instanceof WashingMachine ) {
 	       
 	            System.out.println(product.toString());
 	            System.out.println();
 	        }
+	        
 	    }
 	}
 	public static void displayMember() {
