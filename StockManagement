@@ -7,6 +7,7 @@ public class StockManagement {
 	
 	private static Product[] products;
 	private static int max = 0;
+	private static productCount = 0;
 	private final static int MEMBERS = 4; //number of group members
 
 	public static int getMaxProd(Scanner input) {
@@ -571,26 +572,16 @@ public class StockManagement {
 			}while(continueInput);
 			
 	        
-	        if (products.length >= max) {
+	         if (productCount >= max) {
 	        	System.out.println("Reach maximum capacity.");
 	        }else {
-	        	products[products.length] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
-	        	
+	        	products[productCount] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
+	        	productCount++;
 	        	System.out.println("TV added sucessfully.");
 	    		
 	        }
-	        
-	        boolean valid = false;
-	        do {
-	        	System.out.print("Do you wish to add more TV? (0-NO, 1-YES) ");
-	        	cont = input.nextInt();
-	        	input.nextLine(); // clear buffer
-	        	if (cont == 0 || cont==1)
-	        		valid = true;
-	        	else {
-	        		System.out.println("Invalid input. Please enter 0 (NO) or 1 (YES).");
-	        	}
-	        }while(!valid);
+
+	
 		}while(cont == 1);
 //		input.close();
 	
@@ -683,26 +674,15 @@ public class StockManagement {
 				
 			
 			 
-	        if (products.length >= max) {
-	        	System.out.println("Reach maximum capacity.");
-	        }else {
-	        	products[products.length] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
-	        	
-	        	System.out.println("Laptop added sucessfully.");
-	    		
-	        }
+	        if (productCount >= max) {
+		        	System.out.println("Reach maximum capacity.");
+		        }else {
+		        	products[productCount] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
+		        	productCount++;
+		        	System.out.println("Laptop added sucessfully.");
+		        }
 	        
-	        boolean valid = false;
-	        do {
-	        	System.out.print("Do you wish to add more laptop? (0-NO, 1-YES) ");
-	        	cont = input.nextInt();
-	        	input.nextLine(); // clear buffer
-	        	if (cont == 0 || cont==1)
-	        		valid = true;
-	        	else {
-	        		System.out.println("Invalid input. Please enter 0 (NO) or 1 (YES).");
-	        	}
-	        }while(!valid);
+	       
 		}while(cont ==1);
 		
 	}
