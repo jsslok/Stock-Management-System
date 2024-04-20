@@ -47,11 +47,14 @@ public class Laptop extends Product{
         return "Item Number       : " + getItemNum() + "\n" +
                "Product Name      : " + getName() + "\n" +
                "CPU Type          : " + cpuType + "\n" +
-               "RAM               : " + ram + " GB\n" +
-               "Storage           : " + storage + " GB\n" +
+               "RAM (GB)          : " + ram + "\n" +
+               "Storage (GB)      : " + storage + "\n" +
                "Quantity Available: " + getQuantity() + "\n" +
                "Price (RM)        : " + getPrice() + "\n" +
                "Inventory Value (RM): " + getInventoryValue() + "\n" +
                "Product Status    : " + (this.getStatus()?"active":"discontinue") + "\n";
+    }
+	public void ProductDetails() {
+    
     }
 }
