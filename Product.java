@@ -85,8 +85,7 @@ public abstract class Product {
 		}
 	}
 	@Override
-	public String toString(){
-		public String toString() {
+	public void toString(){
 		System.out.println("Item Number: " + item_num + "\nProduct Name: " + name + "\nQuantity Available: " + quantity + "\nPrice (RM): " + price + "\nInventory Value (RM): " 
 				+ getInventoryValue() + "\nProduct Status: " + (status? "active":"discontinue"));
 	}
