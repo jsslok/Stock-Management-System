@@ -491,13 +491,12 @@ public class StockManagement {
 		System.out.println("*****************************************************************");
 		System.out.println("Please enter the TV product details");
 		System.out.println("*****************************************************************");
-		//input.nextLine(); // clear buffer
+		input.nextLine(); // clear buffer
 		do {
 			do {
 				try {
 					System.out.print("Enter TV name: ");
-					name = input.next();
-					input.nextLine(); // clear buffer
+					name = input.nextLine();
 					continueInput = false;
 				}catch (InputMismatchException e) {
 					System.out.print("Invalid input. Please enter only 1 word.");
@@ -507,8 +506,7 @@ public class StockManagement {
 			do {
 				try {
 					System.out.print("Enter screen type: ");
-					screenType = input.next();
-					input.nextLine(); // clear buffer
+					screenType = input.nextLine();
 					continueInput = false;
 				}catch (InputMismatchException e) {
 					System.out.print("Invalid input. Please enter only 1 word.");
@@ -518,8 +516,7 @@ public class StockManagement {
 			do {
 				try {
 					System.out.print("Enter resolution: ");
-					resolution = input.next();
-					input.nextLine(); // clear buffer
+					resolution = input.nextLine();
 					continueInput = false;
 				}catch (InputMismatchException e) {
 					System.out.print("Invalid input. Please enter only 1 word.");
@@ -607,12 +604,12 @@ public class StockManagement {
 		do {
 			
 				System.out.print("Enter laptop name: ");
-				name = input.next();
-				input.nextLine(); // clear buffer
+				name = input.nextLine();
+				//input.nextLine(); // clear buffer
 				
 				System.out.print("Enter laptop CPU type: ");
-				cpu = input.next();
-				input.nextLine();
+				cpu = input.nextLine();
+				//input.nextLine();
 				
 				do {
 					try {
@@ -622,6 +619,7 @@ public class StockManagement {
 						continueInput = false;
 					}catch(InputMismatchException e) {
 						System.out.println("Invalid input. Please enter a valid number for RAM.");
+						input.nextLine();
 						
 					}
 				}while(continueInput);
@@ -634,9 +632,11 @@ public class StockManagement {
 						continueInput = false;
 					}catch(InputMismatchException e) {
 						System.out.println("Invalid input. Please enter a valid number for storage.");
+						input.nextLine();
 						
 					}
 				}while(continueInput);
+				continueInput = true;
 				do {
 					try {
 			        System.out.print("Enter quantity available in stock: ");
@@ -672,7 +672,7 @@ public class StockManagement {
 						input.nextLine();
 					}
 				}while(continueInput);
-				
+				continueInput = true;
 				
 				
 			
