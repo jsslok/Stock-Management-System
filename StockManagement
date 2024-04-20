@@ -38,7 +38,9 @@ public class StockManagement {
 	
 	
 	public static int displayContent(Product[]products, Scanner input){
-		
+		int index;
+		boolean checkinput = false;
+
 		System.out.println("Products: ");
 		
 		for(int i = 0;i <products.length;i++) {
@@ -47,19 +49,20 @@ public class StockManagement {
 			}
 		}
 		
-		int index = -1;
-		
-		while (index < 0 || index >= products.length || products[index] == null){
-			
-			System.out.println("Please select a product to update (enter index value):");
+		do {
+			System.out.print("Please select a product to update (enter index value):");
 			
 			index = input.nextInt();
+			index -= 1;
 			
-			if (index < 0 || index >= products.length || products[index] == null) {
+			if (index < 0 || index > products.length - 1 || products[index] == null) {
 				System.out.println("Invalid index value. Please select a valid product.");
 			}
-			
-		}
+			else {
+				checkinput = true;
+			}
+		}while(!checkinput);
+
 		return index;
 	}
 	
