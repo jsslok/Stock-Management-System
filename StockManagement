@@ -561,11 +561,11 @@ public class StockManagement {
 			}while(continueInput);
 			
 	        
-	        if (productCount >= max) {
+	        if (products.length >= max) {
 	        	System.out.println("Reach maximum capacity.");
 	        }else {
-	        	products[productCount] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
-	        	productCount++;
+	        	products[products.length] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
+	        	
 	        	System.out.println("TV added sucessfully.");
 	    		
 	        }
@@ -673,11 +673,11 @@ public class StockManagement {
 				
 			
 			 
-	        if (productCount >= max) {
+	        if (products.length >= max) {
 	        	System.out.println("Reach maximum capacity.");
 	        }else {
-	        	products[productCount] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
-	        	productCount++;
+	        	products[products.length] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
+	        	
 	        	System.out.println("Laptop added sucessfully.");
 	    		
 	        }
@@ -709,7 +709,7 @@ public class StockManagement {
 	    boolean laptopExist = false;
 	    boolean washingMachineExist = false;
 	    
-	    for (int i = 0; i < productCount; i++) {
+	    for (int i = 0; i < products.length; i++) {
 	    	if (products[i] instanceof TV)
 	    		tvExist = true;
 	    	if (products[i] instanceof Refrigerator)
@@ -721,7 +721,7 @@ public class StockManagement {
 	    }
 	    if (refrigeratorExist)
 	    	System.out.println("--Refrigerator--");
-	    for (int i = 0; i < productCount; i++) {
+	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Refrigerator ) {
 	       
@@ -731,7 +731,7 @@ public class StockManagement {
 	    
 	    if (tvExist)
 	    	System.out.println("--TV--");
-	    for (int i = 0; i < productCount; i++) {
+	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof TV ) {
 	       
@@ -740,7 +740,7 @@ public class StockManagement {
 	    }
 	    if (laptopExist)
 	    	System.out.println("--Laptop--");
-	    for (int i = 0; i < productCount; i++) {
+	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Laptop ) {
 	       
@@ -749,7 +749,7 @@ public class StockManagement {
 	    }
 	    if (washingMachineExist)
 	    	System.out.println("--Washing Machine--");
-	    for (int i = 0; i < productCount; i++) {
+	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof WashingMachine ) {
 	       
