@@ -45,7 +45,7 @@ public class WashingMachine extends Product{
     	System.out.println ("Item Number: " + this.getItemNum() + "\nProduct Name: " + this.getName() +
     			"Type: " + this.getType() + "Color: " + this.getColor() + "Capacity (kg): " + this.getCapacity() +
     			"\nQuantity Available: " + this.getQuantity() + "\nPrice (RM): " + this.getPrice() + "\nInventory Value (RM): " 
-				+ this.getInventoryValue() + "\nProduct Status: " + (this.getStatus()? "active":"discontinue"));
+				+ this.getInventoryValue() + "\nProduct Status: " + (this.getStatus()? "active":"discontinue") + "\n");
 
     }
 }
