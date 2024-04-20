@@ -1,3 +1,6 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class StockManagement {
@@ -248,27 +251,44 @@ public class StockManagement {
 	}
 
 	//py
-	public static void userChoice (int choice, Product[] products, Scanner input)
+		public static void userChoice (int choice, Product[] products, Scanner input)
 	{
-		switch (choice)
-		{
-			case 1: //View products
-				break;
-			case 2: //Add stock
-				break;
-			case 3: //Deduct stock
-				break;
-			case 4: //Discontinue product
-				break;
-			case 0: //Exit
-				break;
-			default:
-				System.out.println("\nInvalid choice, please enter a valid menu option.");
-				break;
-		}
+			switch (choice)
+			{
+				case 1: //View products
+					displayProducts(products);
+					break;
+				case 2: //Add stock
+					addStock(products, input);
+					break;
+				case 3: //Deduct stock
+					deductStock(products, input);
+					break;
+				case 4: //Discontinue product
+					discontinueProduct(products, input);
+					break;
+				case 0: //Exit
+					break;
+				default:
+					System.out.println("\nInvalid choice, please enter a valid menu option.");
+					break;
+			}
+				
+			if (choice != 0)
+			{
+				System.out.print("\nDo you want to log out? (yes/no): ");
+			    String answer = input.next().toLowerCase();
+			    if (answer.equals("yes"))
+			    	System.out.println();
+			    else
+			    {
+			        System.out.println();
+			        userChoice(displayMenu(input), products, input);
+			    }
+			} 
 	}
 	
-	//py
+		//py
 	private static void addProductChoice(Product[] products, Scanner input) {
 	    int choice;
 	    boolean satisfied = false;
@@ -308,7 +328,7 @@ public class StockManagement {
 	        }
 	        
 	        // Ask the user if they want to add another product
-	        System.out.print("Do you want to add another product? (yes/no): ");
+	        System.out.print("\nDo you want to add another product? (yes/no): ");
 	        String answer = input.next().toLowerCase();
 	        if (!answer.equals("yes")) {
 	            satisfied = true;
@@ -316,6 +336,132 @@ public class StockManagement {
 	        System.out.println();
 	    }
 	}
+
+	//py
+	private static void addRefrigerator(Product[] products, Scanner input) {
+		boolean added = false;
+	    do {
+	        try {
+	            input.nextLine(); // Clear the input buffer
+	            
+	            System.out.print("Enter the name of the refrigerator: ");
+	            String name = input.nextLine();
+	            
+	            System.out.print("Enter the door design: ");
+	            String doorDesign = input.nextLine();
+	            
+	            System.out.print("Enter the color: ");
+	            String color = input.nextLine();
+	            
+	            System.out.print("Enter the capacity (in Litres): ");
+	            int capacity = input.nextInt();
+	            
+	            System.out.print("Enter the quantity available in stock: ");
+	            int quantity = input.nextInt();
+	            
+	            System.out.print("Enter the price (RM): ");
+	            double price = input.nextDouble();
+	            
+	            System.out.print("Enter the item number: ");
+	            int itemNum = input.nextInt();
+	            
+	            // Create a refrigerator object using the provided information
+	            Refrigerator refrigerator = new Refrigerator(itemNum, name, quantity, price, doorDesign, color, capacity);
+	            
+	            // Find an empty slot in the products array and store the refrigerator object
+	            for (int i = 0; i < products.length; i++) {
+	                if (products[i] == null) 
+	                {
+	                    products[i] = refrigerator;
+	                    added = true;
+	                    break;
+	                }
+	            }
+	            
+	            if (added)
+	            {
+	            	System.out.println("\n************************Adding Refrigerator************************");
+	            	System.out.println("\nA new refrigerator (" + refrigerator.getName() + ") has been added successfully. \n");
+	            	System.out.println(refrigerator.toString());
+	            	System.out.println("\n*******************************************************************");
+	            }
+	            	
+	            else
+	            	System.out.println("\nThe product has exceeded the maximum product limit. \nFailed to add a new refrigerator. \n\n");
+	            
+	            
+	            // Exit the loop if data is entered successfully
+	            break;
+	            
+	        } catch (InputMismatchException e) {
+	            System.out.println("Invalid input format. Please press enter to create a valid refrigerator again.");
+	            input.nextLine(); // Clear the input buffer
+	        }
+	    } while (true); // Loop indefinitely until valid input is received
+	}
+
+	//py
+	public static void addWashingMachine(Product[] products, Scanner input)
+	{
+		boolean added = false;
+	    do {
+	        try {
+	            input.nextLine(); // Clear the input buffer
+	            
+	            System.out.print("Enter the name of the washing machine: ");
+	            String name = input.nextLine();
+	            
+	            System.out.print("Enter the type: ");
+	            String type = input.nextLine();
+	            
+	            System.out.print("Enter the color: ");
+	            String color = input.nextLine();
+	            
+	            System.out.print("Enter the capacity (in KG): ");
+	            int capacity = input.nextInt();
+	            
+	            System.out.print("Enter the quantity available in stock: ");
+	            int quantity = input.nextInt();
+	            
+	            System.out.print("Enter the price (RM): ");
+	            double price = input.nextDouble();
+	            
+	            System.out.print("Enter the item number: ");
+	            int itemNum = input.nextInt();
+	            
+	            // Create a washing machine object using the provided information
+	            WashingMachine washingMachine = new WashingMachine(itemNum, name, quantity, price, type, color, capacity);
+	            
+	            // Find an empty slot in the products array and store the washing machine object
+	            for (int i = 0; i < products.length; i++) {
+	                if (products[i] == null) {
+	                    products[i] = washingMachine;
+	                    added = true;
+	                    break;
+	                }
+	            }
+	            
+	            if (added)
+	            {
+	            	System.out.println("\n***********************Adding Washing Machine**********************");
+	            	System.out.println("\nA new washing machine (" + washingMachine.getName() + ") has been added successfully. \n");
+	            	System.out.println(washingMachine.toString());
+	            	System.out.println("\n*******************************************************************");
+	            }
+	            	
+	            else
+	            	System.out.println("\nThe product has exceeded the maximum product limit. \nFailed to add a new washing machine. \n\n");
+	            
+	            // Exit the loop if data is entered successfully
+	            break;
+	            
+	        } catch (InputMismatchException e) {
+	            System.out.println("\nInvalid input format. \nPlease press enter to create a valid refrigerator again.\n");
+	            input.nextLine(); // Clear the input buffer
+	        }
+	    } while (true); // Loop indefinitely until valid input is received
+	}
+
 	//lw
 	public static void displayProducts(Product[] products) {
 		System.out.println("*****************************************************************");
@@ -380,7 +526,6 @@ public class StockManagement {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		
 		//Display Welcome to the SMS 
 		final int MEMBERS = 4; //number of group members
 		System.out.println("*****************************************************************");
@@ -413,8 +558,5 @@ public class StockManagement {
 		
 		userInfo.displayLogOutInfo();
 		input.close();
-		
-		
-	}
-		
+	}		
 }
