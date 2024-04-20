@@ -376,6 +376,7 @@ public class StockManagement {
 	                {
 	                    products[i] = refrigerator;
 	                    added = true;
+			    productCount++;
 	                    break;
 	                }
 	            }
@@ -439,6 +440,7 @@ public class StockManagement {
 	                if (products[i] == null) {
 	                    products[i] = washingMachine;
 	                    added = true;
+			    productCount++;
 	                    break;
 	                }
 	            }
