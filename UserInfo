@@ -13,8 +13,17 @@ public class UserInfo
 	
 	public UserInfo ()
 	{
-		System.out.print("Please enter your name (First Name Surname): ");
-		this.name = input.nextLine();
+		String fullName;
+		do 
+		{
+            System.out.print("Enter your full name: ");
+            fullName = input.nextLine();
+            if (!fullName.matches("[a-zA-Z ]+")) 
+                System.out.println("Please enter a valid name in alphabets only.");
+            else
+            	this.name = fullName;
+        } while (!fullName.matches("[a-zA-Z ]+"));
+			
 		
 		if (checkSpaceInName (name))
 		{
@@ -69,7 +78,7 @@ public class UserInfo
         this.logOutTime = currentDateTime.format(formatter);
         
 		System.out.println();
-		System.out.println ("******************************Good Bye******************************");
+		System.out.println ("******************************Good Bye*****************************");
 		System.out.println (name + " log out as (" + userID + ") at " + logOutTime);
 	}
 }
