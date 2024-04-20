@@ -385,7 +385,7 @@ public class StockManagement {
 	            	System.out.println("\n************************Adding Refrigerator************************");
 	            	System.out.println("\nA new refrigerator (" + refrigerator.getName() + ") has been added successfully. \n");
 	            	System.out.println(refrigerator.toString());
-	            	System.out.println("\n*******************************************************************");
+	            	System.out.println("*******************************************************************");
 	            }
 	            	
 	            else
@@ -448,7 +448,7 @@ public class StockManagement {
 	            	System.out.println("\n***********************Adding Washing Machine**********************");
 	            	System.out.println("\nA new washing machine (" + washingMachine.getName() + ") has been added successfully. \n");
 	            	System.out.println(washingMachine.toString());
-	            	System.out.println("\n*******************************************************************");
+	            	System.out.println("*******************************************************************");
 	            }
 	            	
 	            else
