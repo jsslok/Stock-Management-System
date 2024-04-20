@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class StockManagement {
 	
 	private static Product[] products;
-	
+	private static int max = 0;
+	private final static int MEMBERS = 4; //number of group members
+
 	public static int getMaxProd(Scanner input) {
 		
 		int max=-1;
@@ -462,6 +464,240 @@ public class StockManagement {
 	    } while (true); // Loop indefinitely until valid input is received
 	}
 
+	public static void addTV(Product[] products, Scanner input) {
+		int cont = 0;
+		String name = null;
+        String screenType = null;
+        String resolution = null;
+        double displaySize = 0;
+        int quantity = 0;
+        double price = 0;
+        int itemNumber = 0;
+        boolean continueInput = true;
+		System.out.println("*****************************************************************");
+		System.out.println("Please enter the TV product details");
+		System.out.println("*****************************************************************");
+		//input.nextLine(); // clear buffer
+		do {
+			do {
+				try {
+					System.out.print("Enter TV name: ");
+					name = input.next();
+					input.nextLine(); // clear buffer
+					continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.print("Invalid input. Please enter only 1 word.");
+				}
+			}while (continueInput);
+			continueInput = true;
+			do {
+				try {
+					System.out.print("Enter screen type: ");
+					screenType = input.next();
+					input.nextLine(); // clear buffer
+					continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.print("Invalid input. Please enter only 1 word.");
+					}
+			}while (continueInput);
+			continueInput = true;
+			do {
+				try {
+					System.out.print("Enter resolution: ");
+					resolution = input.next();
+					input.nextLine(); // clear buffer
+					continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.print("Invalid input. Please enter only 1 word.");
+					}
+			}while (continueInput);
+			continueInput = true;
+			do {
+				try {
+			        System.out.print("Enter display size (in inches): ");
+			        displaySize = input.nextDouble();
+			        input.nextLine(); // clear buffer
+			        continueInput = false;
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid input. Please enter a valid number for display size.");
+					input.nextLine();
+				}
+			}while(continueInput);
+			continueInput = true;
+			do {
+				try {
+		        System.out.print("Enter quantity available in stock: ");
+		        quantity = input.nextInt();
+		        input.nextLine(); // clear buffer
+		        continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.println("Invalid input. Please enter a valid number for quantity available in stock.");
+					input.nextLine();
+				}
+			}while(continueInput);
+			continueInput = true;
+			do {
+				try {
+		        System.out.print("Enter price (RM): ");
+		        price = input.nextDouble();
+		        input.nextLine(); // clear buffer
+		        continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.println("Invalid input. Please enter a valid number for price.");
+					input.nextLine();
+				}
+			}while(continueInput);
+			continueInput = true;
+			do {
+				try {
+					System.out.print("Enter item number: ");
+					itemNumber = input.nextInt();
+					input.nextLine(); // clear buffer
+					continueInput = false;
+				}catch (InputMismatchException e) {
+					System.out.println("Invalid input. Please enter a valid number for item number.");
+					input.nextLine();
+				}
+			}while(continueInput);
+			
+	        
+	        if (productCount >= max) {
+	        	System.out.println("Reach maximum capacity.");
+	        }else {
+	        	products[productCount] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
+	        	productCount++;
+	        	System.out.println("TV added sucessfully.");
+	    		
+	        }
+	        
+	        boolean valid = false;
+	        do {
+	        	System.out.print("Do you wish to add more TV? (0-NO, 1-YES) ");
+	        	cont = input.nextInt();
+	        	input.nextLine(); // clear buffer
+	        	if (cont == 0 || cont==1)
+	        		valid = true;
+	        	else {
+	        		System.out.println("Invalid input. Please enter 0 (NO) or 1 (YES).");
+	        	}
+	        }while(!valid);
+		}while(cont == 1);
+//		input.close();
+	
+
+	}
+	public static void addLaptop(Product[] products, Scanner input) {
+		int cont = 0;
+		String name = null;
+        String cpu = null;
+        int ram = 0;
+        int storage = 0;
+        int quantity = 0;
+        double price = 0;
+        int itemNumber = 0;
+        boolean continueInput = true;
+		System.out.println("*****************************************************************");
+		System.out.println("Please enter the Laptop product details");
+		System.out.println("*****************************************************************");
+		input.nextLine();
+		do {
+			
+				System.out.print("Enter laptop name: ");
+				name = input.next();
+				input.nextLine(); // clear buffer
+				
+				System.out.print("Enter laptop CPU type: ");
+				cpu = input.next();
+				input.nextLine();
+				
+				do {
+					try {
+						System.out.print("Enter laptop RAM: ");
+						ram = input.nextInt();
+						input.nextLine();
+						continueInput = false;
+					}catch(InputMismatchException e) {
+						System.out.println("Invalid input. Please enter a valid number for RAM.");
+						
+					}
+				}while(continueInput);
+				continueInput = true;
+				do {
+					try {
+						System.out.print("Enter laptop storage: ");
+						storage = input.nextInt();
+						input.nextLine();
+						continueInput = false;
+					}catch(InputMismatchException e) {
+						System.out.println("Invalid input. Please enter a valid number for storage.");
+						
+					}
+				}while(continueInput);
+				do {
+					try {
+			        System.out.print("Enter quantity available in stock: ");
+			        quantity = input.nextInt();
+			        input.nextLine(); // clear buffer
+			        continueInput = false;
+					}catch (InputMismatchException e) {
+						System.out.println("Invalid input. Please enter a valid number for quantity available in stock.");
+						input.nextLine();
+					}
+				}while(continueInput);
+				continueInput = true;
+				do {
+					try {
+			        System.out.print("Enter price (RM): ");
+			        price = input.nextDouble();
+			        input.nextLine(); // clear buffer
+			        continueInput = false;
+					}catch (InputMismatchException e) {
+						System.out.println("Invalid input. Please enter a valid number for price.");
+						input.nextLine();
+					}
+				}while(continueInput);
+				continueInput = true;
+				do {
+					try {
+						System.out.print("Enter item number: ");
+						itemNumber = input.nextInt();
+						input.nextLine(); // clear buffer
+						continueInput = false;
+					}catch (InputMismatchException e) {
+						System.out.println("Invalid input. Please enter a valid number for item number.");
+						input.nextLine();
+					}
+				}while(continueInput);
+				
+				
+				
+			
+			 
+	        if (productCount >= max) {
+	        	System.out.println("Reach maximum capacity.");
+	        }else {
+	        	products[productCount] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
+	        	productCount++;
+	        	System.out.println("Laptop added sucessfully.");
+	    		
+	        }
+	        
+	        boolean valid = false;
+	        do {
+	        	System.out.print("Do you wish to add more laptop? (0-NO, 1-YES) ");
+	        	cont = input.nextInt();
+	        	input.nextLine(); // clear buffer
+	        	if (cont == 0 || cont==1)
+	        		valid = true;
+	        	else {
+	        		System.out.println("Invalid input. Please enter 0 (NO) or 1 (YES).");
+	        	}
+	        }while(!valid);
+		}while(cont ==1);
+		
+	}
+
+
 	//lw
 	public static void displayProducts(Product[] products) {
 		System.out.println("*****************************************************************");
@@ -521,21 +757,8 @@ public class StockManagement {
 	        }
 	    }
 	}
-
-	//lw
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		//Display Welcome to the SMS 
-		final int MEMBERS = 4; //number of group members
-		System.out.println("*****************************************************************");
-		System.out.println("Welcome to the SMS (Store Management System)");
-		System.out.println("*****************************************************************");
-		LocalDateTime currentDateTime = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		String formattedDateTime = currentDateTime.format(formatter);
-		System.out.println("Current Date and Time: " + formattedDateTime);
-		System.out.println("*****************************************************************");
+	public static void displayMember() {
+	
 		String[] grpmember = new String[MEMBERS];
 		grpmember[0] = "Cheng Puei Ying";
 		grpmember[1] = "Chin Zi Wei";
@@ -547,16 +770,32 @@ public class StockManagement {
 			System.out.println("Name: " + member );
 		};
 		System.out.println("*****************************************************************");
+	}
+	//lw
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("*****************************************************************");
+		System.out.println("Welcome to the SMS (Store Management System)");
+		System.out.println("*****************************************************************");
+		LocalDateTime currentDateTime = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String formattedDateTime = currentDateTime.format(formatter);
+		System.out.println("Current Date and Time: " + formattedDateTime);
+		System.out.println("*****************************************************************");
+		
+		displayMember();
+		
 		UserInfo userInfo = new UserInfo();
 		max = getMaxProd(input);
-		products = new Product[max];
 		
 		addProductChoice(products, input);
-		int choice;
-		choice = displayMenu(input);
-		userChoice(choice, products, input);
+		userChoice(displayMenu(input), products, input);
 		
 		userInfo.displayLogOutInfo();
 		input.close();
-	}		
+		
+		
+	}
+		
 }
