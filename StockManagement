@@ -7,7 +7,7 @@ public class StockManagement {
 	
 	private static Product[] products;
 	private static int max = 0;
-	private static productCount = 0;
+	private static int productCount = 0;
 	private final static int MEMBERS = 4; //number of group members
 
 	public static int getMaxProd(Scanner input) {
