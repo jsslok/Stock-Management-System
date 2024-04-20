@@ -99,7 +99,7 @@ public class StockManagement {
 
 	//luk
 	public static void addStock(Product[] products, Scanner input) {
-		int choice;
+	    int choice;
 	    boolean checkchoice = false;
 	    boolean checkstock = false;
 	    boolean checkctn = false;
@@ -162,8 +162,8 @@ public class StockManagement {
 	
 	//luk
 	public static void deductStock(Product[] products, Scanner input) {
-		int choice;
-		boolean checkchoice = false;
+	    int choice;
+	    boolean checkchoice = false;
 	    boolean checkstock = false;
 	    boolean checkctn = false;
 	    String continueornot;
