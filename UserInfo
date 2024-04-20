@@ -69,6 +69,7 @@ public class UserInfo
 		System.out.println();
 		System.out.println ("******************************Welcome******************************");
 		System.out.println (name + " logged in as (" + userID + ") at " + logInTime);
+		System.out.println();
 	}
 	
 	public void displayLogOutInfo ()
@@ -80,5 +81,6 @@ public class UserInfo
 		System.out.println();
 		System.out.println ("******************************Good Bye*****************************");
 		System.out.println (name + " log out as (" + userID + ") at " + logOutTime);
+		System.out.println();
 	}
 }
