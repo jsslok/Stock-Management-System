@@ -574,7 +574,7 @@ public class StockManagement {
 			
 	        
 	         if (productCount >= max) {
-	        	System.out.println("Reach maximum capacity.");
+	        	System.out.println("\nThe product has exceeded the maximum product limit. \nFailed to add a new TV. \n\n");
 	        }else {
 	        	TV tv = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
 	        	products[productCount] = tv;
@@ -683,7 +683,7 @@ public class StockManagement {
 			
 			 
 	        if (productCount >= max) {
-		        	System.out.println("Reach maximum capacity.");
+		        	System.out.println("\nThe product has exceeded the maximum product limit. \nFailed to add a new laptop. \n\n");
 		        }else {
 		        	Laptop laptop = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
 		        	products[productCount] = laptop;
