@@ -478,6 +478,7 @@ public class StockManagement {
 	    } while (true); // Loop indefinitely until valid input is received
 	}
 
+	//lw
 	public static void addTV(Product[] products, Scanner input) {
 		int cont = 0;
 		String name = null;
@@ -488,9 +489,9 @@ public class StockManagement {
         double price = 0;
         int itemNumber = 0;
         boolean continueInput = true;
-		System.out.println("*****************************************************************");
+		System.out.println("*******************************************************************");
 		System.out.println("Please enter the TV product details");
-		System.out.println("*****************************************************************");
+		System.out.println("*******************************************************************");
 		input.nextLine(); // clear buffer
 		do {
 			do {
@@ -575,18 +576,22 @@ public class StockManagement {
 	         if (productCount >= max) {
 	        	System.out.println("Reach maximum capacity.");
 	        }else {
-	        	products[productCount] = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
+	        	TV tv = new TV(itemNumber, name, quantity, price, screenType, resolution, displaySize);
+	        	products[productCount] = tv;
 	        	productCount++;
-	        	System.out.println("TV added sucessfully.");
+	        	System.out.println("\n******************************Adding TV****************************");
+            	System.out.println("\nA new TV (" + tv.getName() + ") has been added successfully. \n");
+            	System.out.println(tv.toString());
+            	System.out.println("*******************************************************************");
 	    		
 	        }
 
 	
 		}while(cont == 1);
-//		input.close();
-	
 
 	}
+	
+	//lw
 	public static void addLaptop(Product[] products, Scanner input) {
 		int cont = 0;
 		String name = null;
@@ -597,19 +602,19 @@ public class StockManagement {
         double price = 0;
         int itemNumber = 0;
         boolean continueInput = true;
-		System.out.println("*****************************************************************");
+		System.out.println("******************************************************************");
 		System.out.println("Please enter the Laptop product details");
-		System.out.println("*****************************************************************");
+		System.out.println("******************************************************************");
 		input.nextLine();
 		do {
 			
 				System.out.print("Enter laptop name: ");
 				name = input.nextLine();
-				//input.nextLine(); // clear buffer
+				
 				
 				System.out.print("Enter laptop CPU type: ");
 				cpu = input.nextLine();
-				//input.nextLine();
+				
 				
 				do {
 					try {
@@ -680,17 +685,20 @@ public class StockManagement {
 	        if (productCount >= max) {
 		        	System.out.println("Reach maximum capacity.");
 		        }else {
-		        	products[productCount] = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
+		        	Laptop laptop = new Laptop(itemNumber, name, quantity, price, cpu, ram, storage);
+		        	products[productCount] = laptop;
 		        	productCount++;
-		        	System.out.println("Laptop added sucessfully.");
+		        	System.out.println("\n****************************Adding Laptop**************************");
+	            	System.out.println("\nA new TV (" + laptop.getName() + ") has been added successfully. \n");
+	            	System.out.println(laptop.toString());
+	            	System.out.println("*******************************************************************");
+		        	
 		        }
 	        
 	       
 		}while(cont ==1);
 		
 	}
-
-
 	//lw
 	public static void displayProducts(Product[] products) {
 		System.out.println("*****************************************************************");
