@@ -710,40 +710,48 @@ public class StockManagement {
 	    		washingMachineExist = true;
 	    }
 	    if (refrigeratorExist)
+	    	System.out.println();
 	    	System.out.println("--Refrigerator--");
 	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Refrigerator ) {
 	       
 	            System.out.println(product.toString());
+	            System.out.println();
 	        }
 	    }
 	    
 	    if (tvExist)
+	    	System.out.println();
 	    	System.out.println("--TV--");
 	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof TV ) {
 	       
 	            System.out.println(product.toString());
+	            System.out.println();
 	        }
 	    }
 	    if (laptopExist)
+	    	System.out.println();
 	    	System.out.println("--Laptop--");
 	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof Laptop ) {
 	       
 	            System.out.println(product.toString());
+	            System.out.println();
 	        }
 	    }
 	    if (washingMachineExist)
+	    	System.out.println();
 	    	System.out.println("--Washing Machine--");
 	    for (int i = 0; i < products.length; i++) {
 	    	Product product = products[i];
 	        if (product instanceof WashingMachine ) {
 	       
 	            System.out.println(product.toString());
+	            System.out.println();
 	        }
 	    }
 	}
