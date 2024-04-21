@@ -48,5 +48,7 @@ public class TV extends Product{
 				+ this.getInventoryValue() + "\nProduct Status    : " + (this.getStatus()?"active":"discontinue"));
 
     }
+	public void ProductDetails(){
+	}
 }
 
