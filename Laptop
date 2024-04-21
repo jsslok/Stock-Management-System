@@ -54,7 +54,5 @@ public class Laptop extends Product{
                "Inventory Value (RM): " + getInventoryValue() + "\n" +
                "Product Status    : " + (this.getStatus()?"active":"discontinue") + "\n";
     }
-	public void ProductDetails() {
-    
-    }
+
 }
