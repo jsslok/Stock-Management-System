@@ -85,12 +85,8 @@ public abstract class Product {
 		}
 	}
 	@Override
-	public string toString(){
+	public String toString(){
 		return ("Item Number: " + item_num + "\nProduct Name: " + name + "\nQuantity Available: " + quantity + "\nPrice (RM): " + price + "\nInventory Value (RM): " 
 				+ getInventoryValue() + "\nProduct Status: " + (status? "active":"discontinue"));
 	}
-	
-	
 }
-
-
