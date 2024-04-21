@@ -40,10 +40,10 @@ public class Refrigerator extends Product{
     }
     
     public String toString(){
-    	return ("Item Number      : " + this.getItemNum() + "\nProduct Name      : " + this.getName() +
-    			"Door design     :" + this.getDoorDesign() + "Color    :" + this.getColor() + "Capacity (in Litres):" + this.getCapacity() +
-    			"\nQuantity Available    : " + this.getQuantity() + "\nPrice (RM): " + this.getPrice() + "\nInventory Value (RM): " 
-				+ this.getInventoryValue() + "\nProduct Status: " + (this.getStatus()?"active":"discontinue"));
+    	return ("Item Number: " + this.getItemNum() + "\nProduct Name: " + this.getName() +
+    			"\nDoor design:" + this.getDoorDesign() + "\nColor:" + this.getColor() + "\nCapacity (in Litres):" + this.getCapacity() +
+    			"\nQuantity Available: " + this.getQuantity() + "\nPrice (RM): " + this.getPrice() + "\nInventory Value (RM): " 
+				+ this.getInventoryValue() + "\nProduct Status: " + (this.getStatus()?"active":"discontinue")+ "\n");
 
     }
 
