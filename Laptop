@@ -44,15 +44,14 @@ public class Laptop extends Product{
 
     @Override
     public String toString() {
-        return "Item Number       : " + getItemNum() + "\n" +
-               "Product Name      : " + getName() + "\n" +
-               "CPU Type          : " + cpuType + "\n" +
-               "RAM (GB)          : " + ram + "\n" +
-               "Storage (GB)      : " + storage + "\n" +
+        return "Item Number: " + getItemNum() + "\n" +
+               "Product Name: " + getName() + "\n" +
+               "CPU Type: " + cpuType + "\n" +
+               "RAM (GB): " + ram + "\n" +
+               "Storage (GB): " + storage + "\n" +
                "Quantity Available: " + getQuantity() + "\n" +
-               "Price (RM)        : " + getPrice() + "\n" +
+               "Price (RM): " + getPrice() + "\n" +
                "Inventory Value (RM): " + getInventoryValue() + "\n" +
-               "Product Status    : " + (this.getStatus()?"active":"discontinue") + "\n";
+               "Product Status: " + (this.getStatus()?"active":"discontinue") + "\n";
     }
-
 }
