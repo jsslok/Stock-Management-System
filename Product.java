@@ -89,7 +89,7 @@ public abstract class Product {
 		return ("Item Number: " + item_num + "\nProduct Name: " + name + "\nQuantity Available: " + quantity + "\nPrice (RM): " + price + "\nInventory Value (RM): " 
 				+ getInventoryValue() + "\nProduct Status: " + (status? "active":"discontinue"));
 	}
-	public abstract void ProductDetails();
+	
 	
 }
 
