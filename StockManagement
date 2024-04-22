@@ -45,7 +45,7 @@ public class StockManagement {
 		
 		for(int i = 0;i <products.length;i++) {
 			if (products[i] != null) {
-				System.out.println(i + ". " + products[i].getName());
+				System.out.println(i + 1 + ". " + products[i].getName());
 			}
 		}
 		
