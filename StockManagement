@@ -276,7 +276,7 @@ public class StockManagement {
 	    	}
 	    	else { //discontinue product
 	    		products[choice].setStatus(false);
-	    		System.out.println("\n" + products[choice].getName() + " has been successfully discontinued.\n");
+	    		System.out.println("\n" + products[choice].getName() + " has been successfully discontinued.");
 	    		checkinput = true;
 	    	}
 	    }while(!checkinput);		
