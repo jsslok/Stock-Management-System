@@ -54,6 +54,7 @@ public class StockManagement {
 				System.out.print("Please select a product to update (enter index value):");
 			
 				index = input.nextInt();
+				index -= 1;
 			
 				if (index < 0 || index > products.length - 1 || products[index] == null) {
 					System.out.println("Invalid index value. Please select a valid product.");
