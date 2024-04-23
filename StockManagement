@@ -499,7 +499,7 @@ public class StockManagement {
 	        } 
 	        catch (InputMismatchException e) 
 	        {
-	            System.out.println("\nInvalid input format. \nPlease press enter to create a valid refrigerator again.\n");
+	            System.out.println("\nInvalid input format. \nPlease press enter to create a valid washing machine again.\n");
 	            input.nextLine(); // Clear the input buffer
 	        }
 	    } while (true); // Loop indefinitely until valid input is received
